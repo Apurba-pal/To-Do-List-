@@ -5,7 +5,7 @@ import listIcon from './img/list-solid.svg'; // Import the image
 function ToDoList() {
   const [checkedTasks, setCheckedTasks] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks'));
